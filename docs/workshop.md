@@ -230,11 +230,11 @@ Click on **Apply** and you are ready for the lab!
 
 # Lab 1 - Dev Box Management
 
-Dev Center is a platform that allows you to create and manage Dev Boxes for your developers. Dev Boxes are fully managed development environments that can be customized to meet the needs of your developers. You can create Dev Box definitions that define the size and configuration of the Dev Boxes, and then create Dev Box pools that contain the Dev Box definitions. Developers can then create Dev Boxes from the Dev Box pools on demands.
+Dev Center is a platform that allows you to create and manage Dev Boxes for your developers. Dev Boxes are fully managed development environments that can be customized to meet the needs of your developers. You can create Dev Box definitions that define the size and configuration of the Dev Boxes, and then create Dev Box pools that contain the Dev Box definitions. Developers can then create Dev Boxes from the Dev Box pools on demand.
 
-Dev Boxes are VM instances that are created in your Azure subscription and managed behind the scene using Intune. They are fully managed by Microsoft and are automatically updated with the latest security patches and updates. Dev Boxes is designed for developers.  
+Dev Boxes are VM instances that are created in your Azure subscription and managed behind the scene using Intune. They are fully managed by Microsoft and are automatically updated with the latest security patches and updates. Dev Boxes are designed for developers.  
 
-The goal of this lab is to create a project in the Dev Center that represent the project of your team. Then you will assign Dev Box definitions to it and create Dev Box pools. The developers assigned to the project will then be able to deploy Dev Boxes on demands. You will also see how to enable customizations for the Dev Boxes using catalogs.
+The goal of this lab is to create a project in the Dev Center that represents the project of your team. Then you will assign Dev Box definitions to it and create Dev Box pools. The developers assigned to the project will then be able to deploy Dev Boxes on demand. You will also see how to enable customizations for the Dev Boxes using catalogs.
 
 This is the architecture that this lab cover:
 
@@ -406,6 +406,8 @@ This identity (kind of "service account") will be used for the project to be abl
 Go to the resource group and open the Key Vault. In the **Access policies** tab, add a new access policy for the project identity (`prj-ops-<your-initials>`) with the following permissions:
 
 - **Secret permissions**: `Get` and `List`
+
+![KV Access Policy](assets/lab1-devbox-mgmt/keyvault_access.png)
 
 Click on **Create**, your project have now the permissions to get and list secrets from the Key Vault.
 
